@@ -1,0 +1,161 @@
+ssaa=v<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Akash Sharma Shopping Hub</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #222;
+    }
+
+    header {
+      background: #0759b5;
+      color: white;
+      padding: 22px 12px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+    }
+
+    .search {
+      display: block;
+      width: 90%;
+      max-width: 500px;
+      margin: 18px auto;
+      padding: 13px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 25px 12px;
+      background: #e1efff;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 18px;
+    }
+
+    .product {
+      background: white;
+      padding: 18px 10px;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #ddd;
+    }
+
+    .emoji {
+      font-size: 48px;
+    }
+
+    .price {
+      color: #087a32;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    button {
+      background: #087a32;
+      color: white;
+      padding: 11px 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #172337;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Akash Sharma Shopping Hub</h1>
+    <p>आपकी अपनी ऑनलाइन शॉपिंग दुकान</p>
+  </header>
+
+  <input
+    class="search"
+    id="search"
+    type="text"
+    placeholder="सामान खोजें..."
+    oninput="searchProducts()"
+  >
+
+  <section class="hero">
+    <h2>हमारी दुकान में आपका स्वागत है!</h2>
+    <p>अपनी पसंद का सामान चुनें।</p>
+  </section>
+
+  <main class="products" id="products">
+
+    <div class="product">
+      <div class="emoji">🛍️</div>
+      <h3>शॉपिंग बैग</h3>
+      <p>रोज़मर्रा के उपयोग के लिए</p>
+      <p class="price">₹99</p>
+      <button onclick="order('शॉपिंग बैग')">ऑर्डर करें</button>
+    </div>
+
+    <div class="product">
+      <div class="emoji">📿</div>
+      <h3>रुद्राक्ष माला</h3>
+      <p>पूजा और भक्ति सामग्री</p>
+      <p class="price">₹120</p>
+      <button onclick="order('रुद्राक्ष माला')">ऑर्डर करें</button>
+    </div>
+
+    <div class="product">
+      <div class="emoji">🧴</div>
+      <h3>चंदन</h3>
+      <p>पूजा के लिए चंदन</p>
+      <p class="price">₹120</p>
+      <button onclick="order('चंदन')">ऑर्डर करें</button>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Akash Sharma Shopping Hub</p>
+    <p>धन्यवाद! फिर से पधारें।</p>
+  </footer>
+
+  <script>
+    function searchProducts() {
+      const query = document.getElementById("search")
+        .value.toLowerCase();
+
+      document.querySelectorAll(".product").forEach(product => {
+        product.style.display =
+          product.innerText.toLowerCase().includes(query)
+    =        ? "block"
+            : "none";
+      });
+    }
+
+    function order(product) {
+      alert("आपने " + product + " चुना है।");
+    }
+  </script>
+
+</body>
+</html>
